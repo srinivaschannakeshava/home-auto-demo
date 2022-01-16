@@ -1,0 +1,22 @@
+<div class="container mt-2" style="width: 300px;">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Switch Panel</h5>
+        <h6 class="card-subtitle mb-2 text-muted">Control Panel</h6>
+        <div class="row">
+          <ui-switch class="m-2" size="large" checkedLabel="ON" uncheckedLabel="OFF" (change)="onChangeEvent({'s1': $event?1:0})" >
+            S1
+          </ui-switch>
+          <ui-switch class="m-2" size="large" checkedLabel="ON" uncheckedLabel="OFF" (change)="onChangeEvent({'s2': $event?1:0})">
+            S2
+          </ui-switch>
+          <ui-switch class="m-2" size="large" checkedLabel="ON" uncheckedLabel="OFF" (change)="onChangeEvent({'s3': $event?1:0})">
+            S3
+          </ui-switch>
+          <ui-switch class="m-2" size="large" checkedLabel="ON" uncheckedLabel="OFF" (change)="onChangeEvent({'s4': $event?1:0})">
+            S4
+          </ui-switch>
+        </div>
+    </div>
+  </div>
+</div>

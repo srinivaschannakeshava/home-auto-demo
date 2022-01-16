@@ -1,0 +1,13 @@
+
+server:
+  port: 8090
+  
+spring:
+  application:
+    name: H-AUTO-DEMO
+  security:
+    user:
+      name: admin
+      password: admin@103
+      roles:
+      - manager

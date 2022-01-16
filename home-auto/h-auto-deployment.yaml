@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: h-auto-demo
+spec:
+  selector:
+    matchLabels:
+      app: h-auto-demo
+  template:
+    metadata:
+      labels:
+        app: h-auto-demo
+    spec:
+      containers:
+      - name: h-auto-demo
+        image: srini91/home-auto-demo:1.1-jdk8alpine-armv7
+        resources:
+          limits:
+            memory: "512Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 8090
+      nodeSelector:
+        dedicated: ftp
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: h-auto-serv
+spec:
+  selector:
+    app: h-auto-demo
+  type: NodePort
+  ports:
+  - port: 8090
+    targetPort: 8090
+    nodePort: 30090
